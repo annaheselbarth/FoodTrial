@@ -21,5 +21,16 @@ namespace FoodTrial.MVC.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(TrialCreate trial)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            return View(trial);
+        }
     }
 }
