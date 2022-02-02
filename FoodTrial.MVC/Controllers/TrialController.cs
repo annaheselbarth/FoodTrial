@@ -16,5 +16,10 @@ namespace FoodTrial.MVC.Controllers
             var model = new TrialListItem[0];
             return View(model);
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }
