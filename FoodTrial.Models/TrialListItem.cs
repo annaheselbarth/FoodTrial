@@ -14,9 +14,9 @@ namespace FoodTrial.Models
         public string Comment { get; set; }
         public DateTime DateTime { get; set; }
         public int NumberOfDays { get; set; }
-        //public bool MedicalIntervention { get; set; }
+        public bool MedicalIntervention { get; set; }
         public Symptoms Symptoms { get; set; }
         public TypeOfReaction ReactionType { get; set; }
-        //public bool IsSafe { get; set; }
+        public bool IsSafe { get; set; }
     }
 }

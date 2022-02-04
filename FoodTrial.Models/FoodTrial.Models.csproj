@@ -71,10 +71,6 @@
       <Project>{509fb80d-ba8d-43db-9015-6a76124a03c1}</Project>
       <Name>FoodTrial.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FoodTrial.Services\FoodTrial.Services.csproj">
-      <Project>{196938c7-8d5d-4207-90fa-3c9e45b1bfc8}</Project>
-      <Name>FoodTrial.Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
