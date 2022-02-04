@@ -30,14 +30,20 @@ namespace FoodTrial.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(MedicineCreate medicine)
         {
-            if (ModelState.IsValid)
-            {
-                return View(medicine);
-            }
+            if (!ModelState.IsValid) return View(medicine);
 
             var service = CreateMedicineService();
-            service.CreateMedicine(medicine);
-            return RedirectToAction("Index");
+
+            if (service.CreateMedicine(medicine))
+            {
+                TempData["SaveResult"] = "Your note was created.";
+                return RedirectToAction("Index");
+
+            };
+
+            ModelState.AddModelError("", "Note could not be created.");
+
+            return View(medicine);
 
 
         }
