@@ -30,14 +30,19 @@ namespace FoodTrial.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(TrialCreate trial)
         {
-            if (ModelState.IsValid)
-            {
-                return View(trial);
-            }
+            if (!ModelState.IsValid) return View(trial);
 
             var service = CreateTrialService();
-            service.CreateTrial(trial);
-            return RedirectToAction("Index");
+
+            if (service.CreateTrial(trial))
+            {
+                TempData["SaveResult"] = "Your trial was created.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Trial could not be created.");
+            return View(trial);
+           
 
         }
 
