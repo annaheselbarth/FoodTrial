@@ -35,12 +35,18 @@ namespace FoodTrial.MVC.Controllers
                 return View(medicine);
             }
 
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new MedicineService(userId);
+            var service = CreateMedicineService();
             service.CreateMedicine(medicine);
             return RedirectToAction("Index");
 
-           
+
+        }
+
+        private MedicineService CreateMedicineService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new MedicineService(userId);
+            return service;
         }
     }
 }
