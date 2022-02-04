@@ -1,4 +1,6 @@
 ﻿using FoodTrial.Models;
+using FoodTrial.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,9 @@ namespace FoodTrial.MVC.Controllers
         // GET: Medicine
         public ActionResult Index()
         {
-            var model = new MedicineListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new TrialService(userId);
+            var model = service.GetTrials();
             return View(model);
         }
 
@@ -28,9 +32,15 @@ namespace FoodTrial.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-
+                return View(medicine);
             }
-            return View(medicine);
+
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new MedicineService(userId);
+            service.CreateMedicine(medicine);
+            return RedirectToAction("Index");
+
+           
         }
     }
 }

@@ -11,7 +11,7 @@ namespace FoodTrial.Models
         public int MedicineId { get; set; }
         public string Name { get; set; }
         public string Dose { get; set; }
-        // public int Frequency { get; set; }
+        public int Frequency { get; set; }
         public string  Comment { get; set; }
 
     }
