@@ -1,0 +1,66 @@
+﻿@model FoodTrial.Models.MedicineDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MedicineDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicineId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedicineId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrialId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrialId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Frequency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Frequency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MedicineId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
