@@ -55,5 +55,26 @@ namespace FoodTrial.Services
 
             }
         }
+
+        public MedicineDetail GetMedicineById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Medicines
+                        .Single(m => m.MedicineId == id);
+                return
+                    new MedicineDetail
+                    {
+                        MedicineId = entity.MedicineId,
+                        TrialId = entity.TrialId,
+                        Name = entity.Name,
+                        Dose = entity.Dose,
+                        Frequency = entity.Frequency,
+                        Comment = entity.Comment
+                    };
+            }
+        }
     }
 }
