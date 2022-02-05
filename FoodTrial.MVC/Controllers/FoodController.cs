@@ -44,6 +44,14 @@ namespace FoodTrial.MVC.Controllers
 
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateFoodService();
+            var food = svc.GetFoodById(id);
+
+            return View(food);
+        }
+
         private FoodService CreateFoodService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
