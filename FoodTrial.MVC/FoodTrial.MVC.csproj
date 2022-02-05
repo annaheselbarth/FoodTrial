@@ -243,6 +243,7 @@
     <Content Include="Views\Food\Create.cshtml" />
     <Content Include="Views\Trial\Create.cshtml" />
     <Content Include="Views\Medicine\Create.cshtml" />
+    <Content Include="Views\Food\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
