@@ -57,9 +57,9 @@ if(TempData.ContainsKey("SaveResult"))
             @Html.DisplayFor(modelItem => item.NumberOfDays)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new { id = item.TrialId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.TrialId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.TrialId })
         </td>
     </tr>
 }
