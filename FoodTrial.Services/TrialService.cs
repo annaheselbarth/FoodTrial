@@ -83,5 +83,34 @@ namespace FoodTrial.Services
                     };
             }
         }
+
+        public bool UpdateTrial(TrialEdit trial)
+        {
+            try
+            {
+                using (var ctx = new ApplicationDbContext())
+                {
+                    var entity =
+                        ctx
+                            .Trials
+                            .Single(t => t.TrialId == trial.TrialId);
+                    entity.TrialId = trial.TrialId;
+                    entity.FoodId = trial.FoodId;
+                    entity.Comment = trial.Comment;
+                    entity.DateTime = trial.DateTime;
+                    entity.NumberOfDays = trial.NumberOfDays;
+                    entity.MedicalIntervention = trial.MedicalIntervention;
+                    entity.Symptoms = trial.Symptoms;
+                    entity.ReactionType = trial.ReactionType;
+                    entity.IsSafe = trial.IsSafe;
+
+                    return ctx.SaveChanges() == 1;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

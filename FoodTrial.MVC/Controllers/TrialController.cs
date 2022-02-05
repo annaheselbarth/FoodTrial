@@ -54,6 +54,26 @@ namespace FoodTrial.MVC.Controllers
             return View(trial);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateTrialService();
+            var detail = service.GetTrialById(id);
+            var trial =
+                new TrialEdit
+                {
+                    TrialId = detail.TrialId,
+                    FoodId = detail.FoodId,
+                    Comment = detail.Comment,
+                    DateTime = detail.DateTime,
+                    NumberOfDays = detail.NumberOfDays,
+                    MedicalIntervention = detail.MedicalIntervention,
+                    Symptoms = detail.Symptoms,
+                    ReactionType = detail.ReactionType,
+                    IsSafe = detail.IsSafe
+                };
+            return View(trial);
+        }
+
         private TrialService CreateTrialService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
