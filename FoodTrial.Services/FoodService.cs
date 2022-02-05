@@ -75,5 +75,32 @@ namespace FoodTrial.Services
                     };
             }
         }
+
+        public bool UpdateFood(FoodEdit food)
+        {
+            try
+            {
+                using (var ctx = new ApplicationDbContext())
+                {
+                    var entity =
+                        ctx
+                            .Foods
+                            .Single(f => f.FoodId == food.FoodId);
+                    entity.FoodId = food.FoodId;
+                    entity.Name = food.Name;
+                    entity.AllergenGroup = food.AllergenGroup;
+                    entity.FoodGroup = food.FoodGroup;
+                    entity.Description = food.Description;
+
+                    return ctx.SaveChanges() == 1;
+
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
     }
 }
