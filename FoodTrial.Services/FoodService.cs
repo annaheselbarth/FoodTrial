@@ -76,6 +76,34 @@ namespace FoodTrial.Services
             }
         }
 
+        public FoodDetail GetByName(string name)
+        {
+            try
+            {
+                using (var ctx = new ApplicationDbContext())
+                {
+
+                    var entity =
+                        ctx
+                           .Foods
+                           .Single(f => f.Name == name);
+                    
+                    return
+                       new FoodDetail
+                       {
+                           FoodId = entity.FoodId,
+                           AllergenGroup = entity.AllergenGroup,
+                           FoodGroup = entity.FoodGroup,
+                           Description = entity.Description
+                       };
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         public bool UpdateFood(FoodEdit food)
         {
             try
