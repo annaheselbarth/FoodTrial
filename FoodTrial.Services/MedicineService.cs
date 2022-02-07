@@ -76,5 +76,31 @@ namespace FoodTrial.Services
                     };
             }
         }
+
+        public bool UpdateMedicine(MedicineEdit medicine)
+        {
+            try
+            {
+                using (var ctx = new ApplicationDbContext())
+                {
+                    var entity =
+                    ctx
+                         .Medicines
+                         .Single(m => m.MedicineId == medicine.MedicineId);
+                    entity.MedicineId = medicine.MedicineId;
+                    entity.TrialId = medicine.TrialId;
+                    entity.Name = medicine.Name;
+                    entity.Dose = medicine.Dose;
+                    entity.Frequency = medicine.Frequency;
+                    entity.Comment = medicine.Comment;
+
+                    return ctx.SaveChanges() == 1;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
