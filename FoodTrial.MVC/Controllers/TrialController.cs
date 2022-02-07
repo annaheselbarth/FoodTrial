@@ -97,6 +97,25 @@ namespace FoodTrial.MVC.Controllers
             ModelState.AddModelError("", "Your trial could not be updated.");
             return View(trial);
         }
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateTrialService();
+            var trial = svc.GetTrialById(id);
+
+            return View(trial);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateTrialService();
+            service.DeleteTrial(id);
+            TempData["SaveResult"] = "Your trial was deleted";
+            return RedirectToAction("Index");
+        }
 
         private TrialService CreateTrialService()
         {

@@ -84,6 +84,8 @@ namespace FoodTrial.Services
             }
         }
 
+        
+
         public bool UpdateTrial(TrialEdit trial)
         {
             try
@@ -110,6 +112,20 @@ namespace FoodTrial.Services
             catch
             {
                 return false;
+            }
+        }
+
+        public bool DeleteTrial(int trialId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Trials
+                        .Single(t => t.TrialId == trialId);
+                ctx.Trials.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }
