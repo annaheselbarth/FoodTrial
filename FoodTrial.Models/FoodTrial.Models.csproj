@@ -56,13 +56,16 @@
   <ItemGroup>
     <Compile Include="FoodCreate.cs" />
     <Compile Include="FoodDetail.cs" />
+    <Compile Include="FoodEdit.cs" />
     <Compile Include="FoodListItem.cs" />
     <Compile Include="MedicineCreate.cs" />
     <Compile Include="MedicineDetail.cs" />
+    <Compile Include="MedicineEdit.cs" />
     <Compile Include="MedicineListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrialCreate.cs" />
     <Compile Include="TrialDetail.cs" />
+    <Compile Include="TrialEdit.cs" />
     <Compile Include="TrialListItem.cs" />
   </ItemGroup>
   <ItemGroup>

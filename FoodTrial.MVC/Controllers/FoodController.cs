@@ -68,6 +68,30 @@ namespace FoodTrial.MVC.Controllers
                 return View(food);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, FoodEdit food)
+        {
+            if (!ModelState.IsValid) return View(food);
+
+            if(food.FoodId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(food);
+            }
+
+            var service = CreateFoodService();
+
+            if (service.UpdateFood(food))
+            {
+                TempData["SaveResult"] = "Your food was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your food could not be updated.");
+            return View(food);
+        }
+
         private FoodService CreateFoodService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
