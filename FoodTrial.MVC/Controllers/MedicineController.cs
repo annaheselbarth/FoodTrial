@@ -73,6 +73,30 @@ namespace FoodTrial.MVC.Controllers
             return View(medicine);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, MedicineEdit medicine)
+        {
+            if (!ModelState.IsValid) return View(medicine);
+
+            if (medicine.MedicineId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(medicine);
+            }
+
+            var service = CreateMedicineService();
+
+            if (service.UpdateMedicine(medicine))
+            {
+                TempData["SaveResult"] = "Your medicine was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your medicine could not be updated.");
+            return View(medicine);
+        }
+
         private MedicineService CreateMedicineService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

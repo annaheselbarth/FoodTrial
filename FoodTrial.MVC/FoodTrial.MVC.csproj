@@ -248,6 +248,7 @@
     <Content Include="Views\Medicine\Details.cshtml" />
     <Content Include="Views\Food\Edit.cshtml" />
     <Content Include="Views\Trial\Edit.cshtml" />
+    <Content Include="Views\Medicine\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
