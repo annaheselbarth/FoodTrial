@@ -102,5 +102,19 @@ namespace FoodTrial.Services
                 return false;
             }
         }
+
+        public bool DeleteMedicine(int medicineId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Medicines
+                        .Single(m => m.MedicineId == medicineId);
+                ctx.Medicines.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

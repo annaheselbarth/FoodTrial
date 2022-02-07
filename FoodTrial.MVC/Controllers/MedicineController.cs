@@ -97,6 +97,27 @@ namespace FoodTrial.MVC.Controllers
             return View(medicine);
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateMedicineService();
+            var medicine = svc.GetMedicineById(id);
+
+            return View(medicine);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateMedicineService();
+            service.DeleteMedicine(id);
+            TempData["SaveResult"] = "Your medicine was deleted";
+            return RedirectToAction("Index");
+        }
+
+
         private MedicineService CreateMedicineService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
