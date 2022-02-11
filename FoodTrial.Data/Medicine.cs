@@ -14,7 +14,7 @@ namespace FoodTrial.Data
         public int MedicineId { get; set; }
 
         [ForeignKey(nameof(Trial))]
-        public int TrialId { get; set; }
+        public int? TrialId { get; set; }
         public virtual  Trial Trial { get; set; }
         [Required]
         public string Name { get; set; }

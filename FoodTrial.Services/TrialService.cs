@@ -22,10 +22,14 @@ namespace FoodTrial.Services
             var entity =
                 new Trial()
                 {
-                    
+                    FoodId = trial.FoodId,
                     Comment = trial.Comment,
                     DateTime = trial.DateTime,
                     NumberOfDays = trial.NumberOfDays,
+                    Symptoms = trial.Symptoms,
+                    MedicalIntervention = trial.MedicalIntervention,
+                    ReactionType = trial.ReactionType,
+                    IsSafe = trial.IsSafe
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -71,7 +75,7 @@ namespace FoodTrial.Services
                 return
                     new TrialDetail
                     {
-                        TrialId = entity.TrialId,
+                        
                         FoodId = entity.FoodId,
                         Comment = entity.Comment,
                         DateTime = entity.DateTime,

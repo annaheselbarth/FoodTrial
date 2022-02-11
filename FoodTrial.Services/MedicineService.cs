@@ -22,6 +22,8 @@ namespace FoodTrial.Services
             var entity =
                 new Medicine()
                 {
+                    MedicineId = medicine.MedicineId,
+                    TrialId = medicine.TrialId,
                     Name = medicine.Name,
                     Dose = medicine.Dose,
                     Frequency = medicine.Frequency,

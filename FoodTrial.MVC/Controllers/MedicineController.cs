@@ -16,8 +16,8 @@ namespace FoodTrial.MVC.Controllers
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new TrialService(userId);
-            var model = service.GetTrials();
+            var service = new MedicineService(userId);
+            var model = service.GetMedicines();
             return View(model);
         }
 
@@ -36,12 +36,12 @@ namespace FoodTrial.MVC.Controllers
 
             if (service.CreateMedicine(medicine))
             {
-                TempData["SaveResult"] = "Your note was created.";
+                TempData["SaveResult"] = "Your medicine was created.";
                 return RedirectToAction("Index");
 
             };
 
-            ModelState.AddModelError("", "Note could not be created.");
+            ModelState.AddModelError("", "Medicine could not be created.");
 
             return View(medicine);
 

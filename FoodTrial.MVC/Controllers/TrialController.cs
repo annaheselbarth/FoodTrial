@@ -61,7 +61,7 @@ namespace FoodTrial.MVC.Controllers
             var trial =
                 new TrialEdit
                 {
-                    TrialId = detail.TrialId,
+                    
                     FoodId = detail.FoodId,
                     Comment = detail.Comment,
                     DateTime = detail.DateTime,

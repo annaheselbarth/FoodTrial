@@ -9,7 +9,7 @@ namespace FoodTrial.Models
     public class MedicineDetail
     {
         public int MedicineId { get; set; }
-        public int TrialId { get; set; }
+        public int? TrialId { get; set; }
         public string Name { get; set; }
         public string Dose { get; set; }
         public int Frequency { get; set; }

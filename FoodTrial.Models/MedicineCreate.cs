@@ -9,6 +9,8 @@ namespace FoodTrial.Models
 {
     public class MedicineCreate
     {
+        public int MedicineId { get; set; }
+        public int? TrialId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
