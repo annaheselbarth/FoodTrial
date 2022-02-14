@@ -3,11 +3,62 @@
     padding-bottom: 20px;
 }
 
+.bgimage {
+    height: 100vh;
+    background: url('background-image: url('Photo by <a href="https://unsplash.com/@brookelark?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Brooke Lark</a> on <a href="https://unsplash.com/s/photos/food?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> '); background-size: cover;
+    position: relative;
+}
+
+.navbarScroll.navbarDark {
+    background-color: black;
+}
+
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    
 }
+
+#about, #skills, #portfolio, #contact {
+    margin-top: 4rem;
+    padding-top: 4rem;
+}
+
+#contact {
+    padding-bottom: 4rem;
+}
+
+.imageAboutPage {
+    width: 100%;
+}
+
+/* skills section css */
+.skillsText.card {
+    height: 180px;
+    cursor: pointer;
+}
+
+.skillsIcon {
+    font-size: 36px;
+    text-align: center;
+    width: 100%;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card:hover .skillsIcon {
+    color: #9cc4e8;
+}
+
+.skillsText:hover {
+    border: 1px solid #9cc4e8;
+}
+
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
