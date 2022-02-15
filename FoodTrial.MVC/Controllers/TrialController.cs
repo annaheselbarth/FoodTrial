@@ -123,5 +123,19 @@ namespace FoodTrial.MVC.Controllers
             var service = new TrialService(userId);
             return service;
         }
+
+        [HttpPost]
+        public string SaveResults(List<int> symptoms)
+        {
+
+            if (symptoms != null)
+            {
+                return string.Join(",", symptoms);
+            }
+            else
+            {
+                return "No values are selected";
+            }
+        }
     }
 }
