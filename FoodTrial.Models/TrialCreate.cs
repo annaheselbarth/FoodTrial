@@ -23,7 +23,7 @@ namespace FoodTrial.Models
         public int NumberOfDays { get; set; }
         public bool IsSafe { get; set; }
         public bool MedicalIntervention { get; set; }
-        public Symptoms Symptoms { get; set; }
+        public List<Symptoms> Symptoms { get; set; }
         public TypeOfReaction ReactionType { get; set; }
 
     }

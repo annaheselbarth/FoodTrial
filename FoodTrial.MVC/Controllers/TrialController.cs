@@ -67,7 +67,7 @@ namespace FoodTrial.MVC.Controllers
                     DateTime = detail.DateTime,
                     NumberOfDays = detail.NumberOfDays,
                     MedicalIntervention = detail.MedicalIntervention,
-                    Symptoms = detail.Symptoms,
+                    //Symptoms = detail.Symptoms,
                     ReactionType = detail.ReactionType,
                     IsSafe = detail.IsSafe
                 };

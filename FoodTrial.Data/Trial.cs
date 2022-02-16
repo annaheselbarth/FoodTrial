@@ -13,6 +13,11 @@ namespace FoodTrial.Data
     public enum TypeOfReaction { IgE, IgG, FPIES, MCAS, EOE, histamine, noReaction }
     public class Trial
     {
+        public Trial()
+        {
+            this.Symptoms = new List<Symptoms>();
+        }
+
         [Key]
         public int TrialId { get; set; }
         [ForeignKey(nameof(Food))]
@@ -28,7 +33,7 @@ namespace FoodTrial.Data
         [Required]
         public bool MedicalIntervention { get; set; }
         [Required]
-        public Symptoms Symptoms { get; set; }
+        public List<Symptoms> Symptoms { get; set; }
         public TypeOfReaction ReactionType { get; set; }
         
         public bool IsSafe { get; set; }

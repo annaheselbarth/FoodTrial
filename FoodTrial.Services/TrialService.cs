@@ -55,7 +55,7 @@ namespace FoodTrial.Services
                                     DateTime = t.DateTime,
                                     NumberOfDays = t.NumberOfDays,
                                     MedicalIntervention = t.MedicalIntervention,
-                                    Symptoms = t.Symptoms,
+                                    //Symptoms = t.Symptoms,
                                     ReactionType = t.ReactionType,
                                     IsSafe = t.IsSafe
                                 });
@@ -81,7 +81,7 @@ namespace FoodTrial.Services
                         DateTime = entity.DateTime,
                         NumberOfDays = entity.NumberOfDays,
                         MedicalIntervention = entity.MedicalIntervention,
-                        Symptoms = entity.Symptoms,
+                        //Symptoms = entity.Symptoms,
                         ReactionType = entity.ReactionType,
                         IsSafe = entity.IsSafe
                     };
@@ -106,7 +106,7 @@ namespace FoodTrial.Services
                     entity.DateTime = trial.DateTime;
                     entity.NumberOfDays = trial.NumberOfDays;
                     entity.MedicalIntervention = trial.MedicalIntervention;
-                    entity.Symptoms = trial.Symptoms;
+                    //entity.Symptoms = trial.Symptoms;
                     entity.ReactionType = trial.ReactionType;
                     entity.IsSafe = trial.IsSafe;
 

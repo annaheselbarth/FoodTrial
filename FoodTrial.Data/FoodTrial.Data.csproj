@@ -65,6 +65,10 @@
     <Compile Include="Migrations\202202110114014_NullableForeignKey.Designer.cs">
       <DependentUpon>202202110114014_NullableForeignKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202152324331_symptomChange.cs" />
+    <Compile Include="Migrations\202202152324331_symptomChange.Designer.cs">
+      <DependentUpon>202202152324331_symptomChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trial.cs" />
@@ -79,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202110114014_NullableForeignKey.resx">
       <DependentUpon>202202110114014_NullableForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202152324331_symptomChange.resx">
+      <DependentUpon>202202152324331_symptomChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
