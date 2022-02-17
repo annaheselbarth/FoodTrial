@@ -57,17 +57,9 @@
     <Compile Include="Food.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Medicine.cs" />
-    <Compile Include="Migrations\202202021648407_InitialCreate.cs" />
-    <Compile Include="Migrations\202202021648407_InitialCreate.Designer.cs">
-      <DependentUpon>202202021648407_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202202110114014_NullableForeignKey.cs" />
-    <Compile Include="Migrations\202202110114014_NullableForeignKey.Designer.cs">
-      <DependentUpon>202202110114014_NullableForeignKey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202202152324331_symptomChange.cs" />
-    <Compile Include="Migrations\202202152324331_symptomChange.Designer.cs">
-      <DependentUpon>202202152324331_symptomChange.cs</DependentUpon>
+    <Compile Include="Migrations\202202170134169_InitialMigration.cs" />
+    <Compile Include="Migrations\202202170134169_InitialMigration.Designer.cs">
+      <DependentUpon>202202170134169_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,14 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202202021648407_InitialCreate.resx">
-      <DependentUpon>202202021648407_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202110114014_NullableForeignKey.resx">
-      <DependentUpon>202202110114014_NullableForeignKey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202152324331_symptomChange.resx">
-      <DependentUpon>202202152324331_symptomChange.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202170134169_InitialMigration.resx">
+      <DependentUpon>202202170134169_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

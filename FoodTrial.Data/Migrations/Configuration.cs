@@ -10,7 +10,6 @@ namespace FoodTrial.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "FoodTrial.Data.ApplicationDbContext";
         }
 
         protected override void Seed(FoodTrial.Data.ApplicationDbContext context)

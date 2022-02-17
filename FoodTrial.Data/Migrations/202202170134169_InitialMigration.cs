@@ -3,7 +3,7 @@ namespace FoodTrial.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class InitialMigration : DbMigration
     {
         public override void Up()
         {
@@ -24,14 +24,14 @@ namespace FoodTrial.Data.Migrations
                 c => new
                     {
                         MedicineId = c.Int(nullable: false, identity: true),
-                        TrialId = c.Int(nullable: false),
+                        TrialId = c.Int(),
                         Name = c.String(nullable: false),
                         Dose = c.String(nullable: false),
                         Frequency = c.Int(nullable: false),
                         Comment = c.String(),
                     })
                 .PrimaryKey(t => t.MedicineId)
-                .ForeignKey("dbo.Trial", t => t.TrialId, cascadeDelete: true)
+                .ForeignKey("dbo.Trial", t => t.TrialId)
                 .Index(t => t.TrialId);
             
             CreateTable(
@@ -44,7 +44,6 @@ namespace FoodTrial.Data.Migrations
                         DateTime = c.DateTime(nullable: false),
                         NumberOfDays = c.Int(nullable: false),
                         MedicalIntervention = c.Boolean(nullable: false),
-                        Symptoms = c.Int(nullable: false),
                         ReactionType = c.Int(nullable: false),
                         IsSafe = c.Boolean(nullable: false),
                     })

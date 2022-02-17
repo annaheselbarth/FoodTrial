@@ -75,7 +75,7 @@ namespace FoodTrial.Services
                 return
                     new TrialDetail
                     {
-                        
+                        TrialId = entity.TrialId,
                         FoodId = entity.FoodId,
                         Comment = entity.Comment,
                         DateTime = entity.DateTime,
