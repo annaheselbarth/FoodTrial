@@ -13,6 +13,14 @@
     position: relative;
     
 }
+.img-thumbnail {
+    height: 50px;
+    width: 50px;
+}
+
+.badge.badge-secondary{
+
+}
 
 .navbarScroll.navbarDark {
     background-color: black;
@@ -26,7 +34,7 @@
     
 }
 
-#about, #skills, #portfolio, #contact {
+#skills{
     margin-top: 4rem;
     padding-top: 4rem;
 }
