@@ -25,7 +25,7 @@
 
 .bgimage2 {
     height: 100vh;
-    background: url('Images/Front Cover Food Trial Second Part.png');
+    background: url('Images/Second section no word food trial.png');
     background-size: cover;
     position: relative;
 }
@@ -38,6 +38,7 @@
     transform: translate(-50%, -50%);
     color: white;
 }
+
 
 .image {
     height: 100vh;
@@ -54,7 +55,7 @@
 
 background: white;
 z-index: auto;
-left: 100px;
+left: 200px;
 top: 500px;
 
 }
