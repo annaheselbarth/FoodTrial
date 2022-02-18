@@ -25,9 +25,13 @@
                 <ul class="nav navbar-nav navbar-right">
                     @if (User.Identity.IsAuthenticated)
                     {
+                        <li>@Html.ActionLink("Foods", "Index", "Food")</li>
+
                         <li>@Html.ActionLink("Trials", "Index", "Trial")</li>
+                        <li>@Html.ActionLink("Medicines", "Index", "Medicine")</li>
+
                     }
-                    
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -47,7 +51,7 @@
                         <li>Additional Resources</li>
                         <li>Disclaimer</li>
                     </ul>
-                    <p>&copy; @DateTime.Now.Year - Food Trial Application</p>
+                    <center><p>&copy; @DateTime.Now.Year - Food Trial Application</p></center>
                 </footer>
             
     </div>

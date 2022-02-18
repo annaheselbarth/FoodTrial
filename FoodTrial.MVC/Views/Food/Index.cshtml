@@ -4,11 +4,8 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 @if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">
@@ -19,6 +16,30 @@
         @TempData["SaveResult"]
     </div>
 }
+
+<div class="jumbotron" style="background-color: #f5f5ef">
+
+    <img class="imageAboutPage" src="~/Content/Images/Create Food Trial pic.jpg" alt="Food">
+    <div class="card-body center-block">
+        <div class="card-img-overlay">
+            <h5 class="card-title center-block visible-lg-inline-block"></h5>
+            <div class="jumbotron" style="width: 900px">
+                <center><h1 class="display-4">Want to register a Food?</h1></center>
+                <hr class="my-4">
+
+                <a class="btn btn-secondary btn-lg center-block" href="~/Food/Create" role="button">Start Here</a>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<center><h1>Your Food List</h1></center>
+
+<hr>
+
 <table class="table">
     <tr>
         <th>
@@ -39,29 +60,30 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.FoodId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Description)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.AllergenGroup)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.FoodGroup)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.FoodId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.FoodId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.FoodId })
-    </td>
-</tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AllergenGroup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodGroup)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.FoodId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.FoodId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.FoodId })
+            </td>
+        </tr>
+    }
 
 </table>

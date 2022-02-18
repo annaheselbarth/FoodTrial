@@ -4,64 +4,94 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 @if (TempData.ContainsKey("SaveResult"))
 {
-<div class="alert alert-success fade-in" role="alert">
-    @ViewBag.SaveResult
-    <button type="button" class="close" data-dismiss="alert">
-        <span>&times;</span>
-    </button>
-    @TempData["SaveResult"]
-</div>
-}
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TrialId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FoodId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comment)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumberOfDays)
-        </th>
-        <th></th>
-    </tr>
+    <div class="btn btn-default btn-lg" role="alert">
+        @ViewBag.SaveResult
+        <button type="button" class="btn btn-default btn-lg" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TrialId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FoodId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comment)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumberOfDays)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.TrialId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.TrialId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.TrialId })
-        </td>
-    </tr>
 }
 
-</table>
+
+
+    <div class="jumbotron" style="background-color: #f5f5ef">
+       
+        <img class="imageAboutPage" src="~/Content/Images/Kid Trialing Strawberry.png" alt="Kid eating strawberry">
+        <div class="card-body center-block">
+            <div class="card-img-overlay">
+                <h5 class="card-title center-block visible-lg-inline-block"></h5>
+                <div class="jumbotron" style="width: 900px">
+                   <create><h1 class="display-4">Create a food trial?</h1></create>
+                    <hr class="my-4">
+
+                    <a class="btn btn-secondary btn-lg center-block" href="~/Trial/Create" role="button">Start Here</a>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <hr>
+
+
+
+    <hr />
+    <center><h2>Your Past Food Trials</h2></center>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TrialId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FoodId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfDays)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrialId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FoodId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfDays)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.TrialId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.TrialId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.TrialId })
+                </td>
+            </tr>
+        }
+
+    </table>
