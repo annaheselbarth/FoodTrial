@@ -7,6 +7,10 @@
     color: black;
 }
 
+.navbar-nav{
+    color: black;
+}
+
 .navbar-brand{
     padding: 0 0 0 10px;
     color: black;
@@ -43,7 +47,7 @@
 }
 .img-thumbnail {
     height: 250px;
-    width: 100%;
+    width: 200px;
 }
 
 .jumbotron {

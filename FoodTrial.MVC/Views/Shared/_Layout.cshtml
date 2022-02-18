@@ -11,16 +11,17 @@
 <body>
     <div class="navbar navbar-expand-lg fixed-top navbar-dark navbarScroll">
         <div class="container">
-            
-                <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Food Trial Helper", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
+
+           
+            <nav class="navbar navbar-dark primary-color">
+                <div class="container-fluid">
+                <a class="navbar-brand" href="~/Home/Index">
+                    <img src="~/Content/Images/Food Trial Helper Logo.png" height="125" alt="logo">
+                </a>
+                    </div>
+            </nav>
+
+            @*<hr class="my-5">*@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     @if (User.Identity.IsAuthenticated)
@@ -35,14 +36,14 @@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
-
+            
 
         </div>
     </div>
     
     <div class="container body-content">
         @RenderBody()
-        <hr />
+        
         
          
                 <footer>
