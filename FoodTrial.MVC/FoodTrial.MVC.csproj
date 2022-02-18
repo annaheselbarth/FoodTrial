@@ -268,6 +268,7 @@
     <Content Include="Views\Food\Delete.cshtml" />
     <Content Include="Views\Medicine\Delete.cshtml" />
     <Content Include="Views\Trial\Delete.cshtml" />
+    <Content Include="Views\Trial\Get.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

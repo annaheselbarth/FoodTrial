@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FoodTrial.Data
 {
-    public enum Symptoms { hives, eczema, reflux, respiratory, diarhea, constipation, itchy, swelling, pulseDecrease, pulseIncrease, bloodPressureDrop, jointPain, behavioral }
+    public enum Symptoms { hives, eczema, reflux, respiratory, diarhea, constipation, itchy, swelling, pulseDecrease, pulseIncrease, bloodPressureDrop, jointPain, behavioral, none }
 
     public enum TypeOfReaction { IgE, IgG, FPIES, MCAS, EOE, histamine, noReaction }
     public class Trial

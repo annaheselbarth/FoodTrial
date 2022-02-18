@@ -1,0 +1,36 @@
+﻿@model IEnumerable<FoodTrial.Models.TrialListItem>
+
+@{
+    ViewBag.Title = "Get";
+}
+
+<h2>Your Safe Food List</h2>
+
+
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.FoodId)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.FoodId)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>
+        <td>
+           
+        </td>
+    </tr>
+}
+
+</table>

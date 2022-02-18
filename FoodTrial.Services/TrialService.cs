@@ -64,6 +64,26 @@ namespace FoodTrial.Services
             }
         }
 
+        public IEnumerable<TrialListItem> GetSafeFoodList()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Trials
+                        .Where(t => t.IsSafe )
+                        .Select(
+                            t =>
+                                new TrialListItem
+                                {
+                                    FoodId = t.FoodId
+                                }
+
+                        );
+                return query.ToArray();
+            }
+        }
+
         public TrialDetail GetTrialById(int id)
         {
             using (var ctx = new ApplicationDbContext())

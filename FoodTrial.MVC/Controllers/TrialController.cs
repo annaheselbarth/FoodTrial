@@ -45,6 +45,12 @@ namespace FoodTrial.MVC.Controllers
            
 
         }
+        public ActionResult Get()
+        {
+            TrialService trialService = CreateTrialService();
+            var safeFoodList = trialService.GetSafeFoodList();
+            return View(safeFoodList);
+        }
 
         public ActionResult Details(int id)
         {
