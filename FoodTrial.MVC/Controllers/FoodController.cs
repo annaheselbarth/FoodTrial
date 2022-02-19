@@ -38,7 +38,7 @@ namespace FoodTrial.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Note could not be created.");
+            ModelState.AddModelError("", "Food could not be created.");
 
             return View(food);
 
